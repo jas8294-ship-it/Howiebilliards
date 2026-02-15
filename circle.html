@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Circular | Howie’s Mathematical Billiards</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <h1>Howie’s Mathematical Billiards</h1>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="rules.html">Rules</a>
+        <a href="rectangle.html">Rectangular</a>
+        <a class="active" href="circle.html">Circular</a>
+      </nav>
+    </header>
+
+    <main class="card">
+      <h2>Circular Billiards (🔵 orbit, 🟢 caustic, 🔴 particle)</h2>
+
+      <div class="controls">
+        <label>
+          Angle α (radians, from tangent at impact)
+          <input id="angle" type="text" value="pi/4" />
+        </label>
+
+        <label>
+          Number of bounces
+          <input id="bounces" type="number" min="1" step="1" value="200" />
+        </label>
+
+        <label>
+          Particle speed
+          <input id="speed" type="number" min="0.05" step="0.05" value="0.9" />
+        </label>
+
+        <button id="drawBtn">Draw</button>
+
+        <div class="hint">
+          Try: <code>pi/3</code>, <code>pi/4</code>, <code>pi/5</code>, <code>sqrt(2)/5</code>. Must have <code>0 &lt; α ≤ pi/2</code>.
+        </div>
+        <div id="err" class="err"></div>
+      </div>
+
+      <canvas id="cv" width="900" height="900"></canvas>
+    </main>
+
+    <footer class="footer">
+      <span><a href="index.html">Back</a></span>
+    </footer>
+  </div>
+
+  <script src="assets/circle.js"></script>
+</body>
+</html>
