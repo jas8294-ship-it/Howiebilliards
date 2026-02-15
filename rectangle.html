@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Rectangular | Howie’s Mathematical Billiards</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <h1>Howie’s Mathematical Billiards</h1>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="rules.html">Rules</a>
+        <a class="active" href="rectangle.html">Rectangular</a>
+        <a href="circle.html">Circular</a>
+      </nav>
+    </header>
+
+    <main class="stack">
+      <section class="card">
+        <h2>Rectangular Billiards (fixed 2 × 1)</h2>
+        <p class="note">
+          Start point is fixed at (0.3, 0.4). Corner hits are flagged.
+        </p>
+      </section>
+
+      <section class="card">
+        <h3>1) Input number of bounces → candidate closed orbit</h3>
+        <div class="controls">
+          <label>
+            Number of bounces (even)
+            <input id="N_bounces" type="number" min="2" step="2" value="8" />
+          </label>
+          <button id="btnBounces">Draw candidate</button>
+          <div id="outBounces" class="hint"></div>
+          <div id="errBounces" class="err"></div>
+        </div>
+
+        <canvas id="cvBounces" width="900" height="450"></canvas>
+      </section>
+
+      <section class="card">
+        <h3>2) Input slope → trajectory</h3>
+        <div class="controls">
+          <label>
+            Slope (e.g. 1/4, sqrt(2), pi/3, inf)
+            <input id="slopeInput" type="text" value="pi/4" />
+          </label>
+          <label>
+            Max bounces
+            <input id="maxBounces" type="number" min="1" step="1" value="80" />
+          </label>
+          <button id="btnSlope">Draw</button>
+          <div id="outSlope" class="hint"></div>
+          <div id="errSlope" class="err"></div>
+        </div>
+
+        <canvas id="cvSlope" width="900" height="450"></canvas>
+      </section>
+
+      <section class="card">
+        <h3>3) Unfolding (animated demo)</h3>
+        <div class="controls">
+          <label>
+            Hits (segments)
+            <input id="unHits" type="number" min="1" step="1" value="8" />
+          </label>
+          <label>
+            Direction vector (vx, vy)
+            <input id="unDir" type="text" value="2,1" />
+          </label>
+          <button id="btnUnfold">Animate</button>
+          <div class="hint">
+            This shows the same path in the original table (left) and the unfolded tiling (right).
+          </div>
+          <div id="errUnfold" class="err"></div>
+        </div>
+
+        <div class="two">
+          <canvas id="cvUnOrig" width="450" height="450"></canvas>
+          <canvas id="cvUnTile" width="450" height="450"></canvas>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span><a href="index.html">Back</a></span>
+    </footer>
+  </div>
+
+  <script src="assets/rect.js"></script>
+  <script src="assets/unfold.js"></script>
+</body>
+</html>
